@@ -1,0 +1,84 @@
+:root {
+  /** sunny side **/
+  --blue-background: #c2e9f6;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+  /** dark side **/
+  --indigo-background: #221b41;
+  --indigo-border: #47396d;
+  --indigo-color: #6b7abb;
+  --gray-border: rgb(177, 177, 177);
+  --gray-dots: #ebe5e6;
+}
+
+@keyframes reverse {
+  0% {
+    left: 25px;
+    width: 20px;
+  }
+  60% {
+    left: 3px;
+    width: 40px;
+  }
+  100% {
+    left: 3px;
+  }
+}
+
+@keyframes switch {
+  0% {
+    left: 3px;
+  }
+  60% {
+    left: 3px;
+    width: 40px;
+  }
+  100% {
+    left: 25px;
+    width: 20px;
+  }
+}
+
+.toggle-content {
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  /* background */
+  .toggle-label {
+    width: 3rem;
+    height: 1.5rem;
+    background: var(--toggle);
+    border-radius: 0.75rem;
+    display: flex;
+    position: relative;
+    transition: all 350ms ease-in;
+  }
+
+  .toggle-checkbox:checked + .toggle-label {
+    background: var(--toggle-gradient);
+  }
+
+  .toggle-checkbox:checked + .toggle-label:before {
+    animation-name: reverse;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    transition: all 360ms ease-in;
+    background: var(--card-accent);
+  }
+
+  .toggle-label:before {
+    animation-name: switch;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 0.13rem;
+    position: absolute;   
+    border-radius: 1.2rem;
+    background: var(--card);
+  }
+}

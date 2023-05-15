@@ -1,0 +1,103 @@
+#followers-card-container {
+  width: 100%;
+  height: 100%;
+
+  background: var(--card);
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+  transition: background-color 0.26s ease-in;
+
+  hr {
+    width: 100%;
+    height: 4px;
+    border: transparent;
+    border-radius: 0.25rem 0.25rem 0px 0px;
+  }
+
+  .center {
+    display: flex;
+  }
+
+  #followers-card-content {
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    #header-card-followers {
+      align-items: center;
+      justify-content: center;
+
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.85rem;
+        color: var(--accent-text);
+        font-weight: bold;
+      }
+    }
+
+    #center-card-followers {
+      flex-direction: column;
+      align-items: center;
+
+      strong {
+        color: var(--text);
+        font-size: 3rem;
+      }
+
+      span {
+        color: var(--accent-text);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+
+    #footer-card-followers {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      span {
+        font-weight: bold;
+        font-size: 0.85rem;
+      }
+    }
+
+    .green-status {
+      span {
+        color: var(--lime-green);
+      }
+    }
+
+    .red-status {
+      span {
+        color: var(--bright-red);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--card-accent);
+  }
+}
+
+.facebook {
+  background: var(--facebook);
+}
+
+.instagram {
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) border-box;
+}
+
+.twitter {
+  background: var(--twitter);
+}
+
+.youtube {
+  background: var(--youTube);
+}
